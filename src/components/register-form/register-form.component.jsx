@@ -1,9 +1,8 @@
-import {useState, useContext} from 'react';
+import {useState} from 'react';
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
 import {createAuthUserWithEmailAndPassword, createUserDocumentFromAuth} from "../../utils/firebase/firebase.utils";
 
-import {UserContext} from "../../contexts/user.context";
 
 import './register-form.styles.scss'
 
@@ -17,8 +16,6 @@ const defaultFormFields = {
 const RegisterForm = (props) => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const {displayName, email, password, confirmPassword} = formFields;
-
-    const {setCurrentUser} = useContext(UserContext);
 
     const resetFormFields = () => {
         setFormFields(defaultFormFields);
@@ -35,7 +32,6 @@ const RegisterForm = (props) => {
             const {user} = await createAuthUserWithEmailAndPassword(email, password);
 
             await createUserDocumentFromAuth(user, {displayName});
-            setCurrentUser(user)
             resetFormFields();
         } catch (error) {
             if (error.code === 'auth/email-already-in-use') {
@@ -69,8 +65,9 @@ const RegisterForm = (props) => {
                 <FormInput label={'Confirm Password'} type={'password'} required onChange={handleChange}
                            name={'confirmPassword'}
                            value={confirmPassword}/>
-
+                <div className={"register-button-container"}>
                 <Button type={'submit'} onClick={handleSubmit}>REGISTER</Button>
+                </div>
             </form>
         </div>
     )
