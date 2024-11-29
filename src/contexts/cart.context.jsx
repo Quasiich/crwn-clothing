@@ -46,7 +46,6 @@ export const CartProvider = ({children}) => {
         setCartItems(addCartItem(cartItems, productToAdd))
     }
 
-
     const value = {isCartOpen, toggleStatus, addItemToCart, cartItems, cartItemCount};
 
     return (
