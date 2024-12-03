@@ -1,5 +1,5 @@
 
-.category-container {
+.directory-item-container {
   min-width: 30%;
   height: 240px;
   flex: 1 1 auto;
@@ -10,16 +10,18 @@
   margin: 0 7.5px 15px;
   overflow: hidden;
 
-  &:hover { cursor: pointer;
+  &:hover {
+    cursor: pointer;
 
     & .background-image {
       transform: scale(1.1);
       transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
     }
 
-    & .category-body-container {
+    & .directory-item-body {
       opacity: 0.9;
-    } }
+    }
+  }
 
   &.large {
     height: 380px;
@@ -40,7 +42,7 @@
     background-position: center;
   }
 
-  .category-body-container {
+  .directory-item-body {
     height: 90px;
     padding: 0 25px;
     display: flex;
@@ -60,8 +62,7 @@
     }
 
     p {
-      font-weight:
-              lighter;
+      font-weight: lighter;
       font-size: 16px;
     }
   }
