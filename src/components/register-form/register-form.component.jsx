@@ -4,7 +4,7 @@ import Button from "../button/button.component";
 import {createAuthUserWithEmailAndPassword, createUserDocumentFromAuth} from "../../utils/firebase/firebase.utils";
 
 
-import './register-form.styles.scss'
+import {SignUpContainer, RegisterButtonContainer, Question} from './register-form.styles.jsx'
 
 const defaultFormFields = {
     displayName: "",
@@ -48,8 +48,8 @@ const RegisterForm = (props) => {
     }
 
     return (
-        <div className={'sign-up-container'}>
-            <h2>Dont have an account yet?</h2>
+        <SignUpContainer>
+            <Question>Dont have an account yet?</Question>
             <span>Register with your email & password</span>
             <form onSubmit={() => {
             }}>
@@ -65,11 +65,11 @@ const RegisterForm = (props) => {
                 <FormInput label={'Confirm Password'} type={'password'} required onChange={handleChange}
                            name={'confirmPassword'}
                            value={confirmPassword}/>
-                <div className={"register-button-container"}>
+                <RegisterButtonContainer>
                 <Button type={'submit'} onClick={handleSubmit}>REGISTER</Button>
-                </div>
+                </RegisterButtonContainer>
             </form>
-        </div>
+        </SignUpContainer>
     )
 }
 

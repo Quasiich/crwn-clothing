@@ -6,7 +6,7 @@ import {
 } from "../../utils/firebase/firebase.utils";
 import {useState} from "react";
 
-import './login-form.styles.scss'
+import {LoginButtonGroup} from './login-form.styles.jsx'
 
 const defaultFormFields = {
     email: '',
@@ -57,12 +57,12 @@ const LoginForm = () => {
                 <FormInput label={'Password'} type={'password'} required onChange={handleChange} name={'password'}
                            value={password}/>
 
-                <div className={"login-buttons-group"}>
+                <LoginButtonGroup>
                     <Button type={'submit'} onClick={handleLogin}>LOGIN</Button>
                     <Button buttonType={"google"} onClick={loginWithGoogle}>
                         GOOGLE LOGIN
                     </Button>
-                </div>
+                </LoginButtonGroup>
 
             </form>
         </div>
