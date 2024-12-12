@@ -1,5 +1,5 @@
 import FormInput from "../form-input/form-input.component";
-import Button from "../button/button.component";
+import Button, {BUTTON_TYPE_CLASSES} from "../button/button.component";
 import {
     signInWithGooglePopup,
     loginAuthUserWithEmailAndPassword
@@ -7,6 +7,7 @@ import {
 import {useState} from "react";
 
 import {LoginButtonGroup} from './login-form.styles.jsx'
+import {SignUpContainer} from '../register-form/register-form.styles.jsx'
 
 const defaultFormFields = {
     email: '',
@@ -46,7 +47,7 @@ const LoginForm = () => {
     }
 
     return (
-        <div className="sign-up-container">
+        <SignUpContainer>
             <h2>Already have an account?</h2>
             <span>Login with your email & password</span>
             <form onSubmit={() => {
@@ -59,13 +60,13 @@ const LoginForm = () => {
 
                 <LoginButtonGroup>
                     <Button type={'submit'} onClick={handleLogin}>LOGIN</Button>
-                    <Button buttonType={"google"} onClick={loginWithGoogle}>
+                    <Button buttonType={BUTTON_TYPE_CLASSES.google} onClick={loginWithGoogle}>
                         GOOGLE LOGIN
                     </Button>
                 </LoginButtonGroup>
 
             </form>
-        </div>
+        </SignUpContainer>
     )
 }
 
