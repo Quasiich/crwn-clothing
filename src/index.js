@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import {Provider} from 'react-redux'
 import './index.scss';
 import App from './App';
-import {CartProvider} from './contexts/cart.context';
 import {store} from './store/store.js'
 
 import reportWebVitals from './reportWebVitals';
@@ -13,9 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Provider store={store}>
         <BrowserRouter>
-            <CartProvider>
-                <App/>
-            </CartProvider>
+            <App/>
         </BrowserRouter>
     </Provider>
 );
