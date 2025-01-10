@@ -37,13 +37,8 @@ const removeCartItem = (cartItems, productToDecrement) => {
 }
 
 export const setIsCartOpen = (boolean) => {
-    createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN, boolean);
+    return createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN, boolean);
 }
-
-export const toggleStatus = (isCartOpen) => {
-    createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN, !isCartOpen)
-}
-
 
 const removeFromCart = (cartItems, productToRemove) => {
     return cartItems.filter((cartItem) => cartItem.id !== productToRemove.id);
