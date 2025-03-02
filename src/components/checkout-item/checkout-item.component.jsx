@@ -37,7 +37,7 @@ const CheckoutItem = ({item}) => {
                 <Value>{quantity}</Value>
                 <Arrow onClick={addItemHandler}>&#10095;</Arrow>
             </Quantity>
-            <Price>{price}</Price>
+            <Price>{price * quantity}</Price>
             <RemoveButton onClick={removeHandler}>
                 &#10005;
             </RemoveButton>
