@@ -64,7 +64,6 @@ const LoginForm = () => {
                         GOOGLE LOGIN
                     </Button>
                 </LoginButtonGroup>
-
             </form>
         </SignUpContainer>
     )
