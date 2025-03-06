@@ -5,7 +5,7 @@ const DirectoryItem = ({category}) => {
     return (
         <DirectoryItemContainer>
             <BackgroundImage
-                imageUrl={imageUrl}
+                $imageUrl={imageUrl}
             />
             <Body to={`/shop/${title}`}>
                 <h2>{title}</h2>

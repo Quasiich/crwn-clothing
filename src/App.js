@@ -9,19 +9,14 @@ import Shop from './routes/shop/shop.component.jsx'
 import Checkout from "./routes/checkout/checkout.component";
 
 
-import {createUserDocumentFromAuth, onAuthStateChangedListener, getCurrentUser} from "./utils/firebase/firebase.utils";
-import {setCurrentUser} from "./store/user/user.action";
+import {checkUserSession} from "./store/user/user.action";
 
 
 const App = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        try {
-            getCurrentUser().then((user) => console.log(user))
-        } catch (error) {
-            console.error('Auth error: ', error);
-        }
+        dispatch(checkUserSession())
     }, [dispatch])
 
     return (
