@@ -5,9 +5,11 @@ import {PersistGate} from "redux-persist/integration/react";
 import './index.scss';
 import App from './App';
 import {store, persistor} from './store/store.js'
+import { Elements } from '@stripe/react-stripe-js';
 
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
+import {stripePromise} from './utils/stripe/stripe.utils.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,7 +19,9 @@ root.render(
                 v7_startTransition: true,
                 v7_relativeSplatPath: true
             }}>
-                <App/>
+                <Elements stripe={stripePromise}>
+                    <App />
+                </Elements>
             </BrowserRouter>
         </PersistGate>
     </Provider>
