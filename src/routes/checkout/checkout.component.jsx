@@ -33,7 +33,7 @@ const Checkout = () => {
                 <CheckoutItem key={item.id} item={item}/>
             )}
             <span className={'total'}>Total: ${totalPrice}</span>
-            <PaymentForm />
+            {cartItems.length > 0 && <PaymentForm />}
         </div>
     )
 }
